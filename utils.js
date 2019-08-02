@@ -1,3 +1,4 @@
+const prompt = require('prompt');
 const readline = require('readline');
 const r = readline.createInterface({
   input: process.stdin,
@@ -29,12 +30,27 @@ exports.getPlayerCount = async function () {
 };
 
 exports.getPlayerNames = function (playerCount) {
-  try {
-    
+  const playerNames = [];
+  for (let i = 0; i < playerCount; i++) {
+    playerNames.push({
+      required: true,
+      name: i + 1,
+      description: `${i + 1}번 플레이어의 이름을 입력해주세요`,
+    });
   }
-  catch (e) {
-    throw new Error(e);
-  }
+  
+  return new Promise((resolve, reject) => {
+    prompt.start();
+    console.log(playerNames);
+    prompt.get(playerNames, (err, results) => {
+      if (err) {
+        reject(err);
+      }
+      else {
+        resolve(results);
+      }
+    });
+  });
 }
 
 exports.getRandomCount = function (cap = 1) {
