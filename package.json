@@ -1,0 +1,28 @@
+{
+  "name": "simple-ladder-game",
+  "version": "1.0.0",
+  "description": "사다리사다리사다리~",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evan-moon/simple-ladder-game.git"
+  },
+  "keywords": [
+    "game"
+  ],
+  "author": "Evan Moon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/evan-moon/simple-ladder-game/issues"
+  },
+  "homepage": "https://github.com/evan-moon/simple-ladder-game#readme",
+  "dependencies": {
+    "prompt": "^1.0.0"
+  }
+}
