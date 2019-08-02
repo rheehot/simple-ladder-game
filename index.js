@@ -3,17 +3,14 @@
   const { LADDER_DEPTH } = require('./constants');
 
   const Ladder = require('./lib/Ladder');
-  const User = require('./lib/User');
+  const Player = require('./lib/Player');
   const playerCount = await getPlayerCount();
 
   const ladder = new Ladder(playerCount, LADDER_DEPTH);
-  ladder.generate();
-  
-  const users = [];
-  for (let i = 0; i < PLAYER_COUNT; i++) {
-    const user = new User(`Player_${i}`, i);
-    users.push(user);
+  for (let i = 0; i < playerCount; i++) {
+    const player = new Player(`Player_${i}`, i);
+    ladder.addPlayer(player);
   }
 
-  
+  ladder.start();
 })();
